@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كافيه علاء الدين</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <div class="welcome-screen">
+        <div class="welcome-content">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600" class="cafe-image" alt="كافيه علاء الدين">
+            <h1>كافيه علاء الدين</h1>
+            <button onclick="enterSite()" class="enter-btn">دخول للموقع</button>
+        </div>
+    </div>
+    
+
+    <!-- حاوية النجوم المتساقطة -->
+    <div class="stars-container"></div>
+
+    <!-- الخلفية المتحركة -->
+    <div class="background-slider"></div>
+
+    <!-- الحاوية الرئيسية -->
+    <div class="main-container">
+        <div class="glass-container">
+            <div class="cafe-logo">
+                <div class="logo-3d">
+                    <h1>علاء الدين</h1>
+                    <div class="shine"></div>
+                </div>
+                <p>حيث السحر يلتقي بالقهوة</p>
+            </div>
+
+            <div class="offer-timer">
+                <h3>🔥 عرض اليوم</h3>
+                <p>خصم 25% على جميع المشروبات الساخنة</p>
+                <div id="countdown">
+                    <span id="hours">01</span>:<span id="minutes">02</span>:<span id="seconds">05</span>
+                </div>
+            </div>
+
+            <div class="login-section">
+                <div class="login-options">
+                    <button onclick="switchToScan()" class="scan-btn">
+                        <i class="fas fa-qrcode"></i> مسح الكود
+                    </button>
+                    <button onclick="switchToManual()" class="manual-btn">
+                        <i class="fas fa-keyboard"></i> إدخال الكود
+                    </button>
+                </div>
+
+                <div id="scanner-container" style="display: none;">
+                    <div id="reader"></div>
+                </div>
+
+                <form id="manual-input" onsubmit="return validateCode(event)">
+                    <input type="text" placeholder="أدخل كود الواي فاي" required>
+                    <button type="submit">اتصال بالواي فاي</button>
+                </form>
+            </div>
+
+              <!-- خريطة الموقع -->
+<div class="map-container">
+    <h3>موقعنا</h3>
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.789!2d31.2357!3d30.0444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDAyJzM5LjgiTiAzMcKwMTQnMDguNiJF!5e0!3m2!1sen!2seg!4v1234567890"
+        width="100%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+    </iframe>
+</div>
+<div class="social-icons">
+    <a href="#" class="social-icon">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="#" class="social-icon">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="#" class="social-icon">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="#" class="social-icon">
+        <i class="fab fa-tiktok"></i>
+    </a>
+</div>
+
+    <!-- توقيع المطور -->
+    <div class="developer-signature">
+        <p>Developed with <i class="fas fa-heart"></i> by</p>
+        <a href="https://t.me/g_3_e" target="_blank" class="development">
+            <span>Al-Ghazali</span>
+            <i class="fab fa-telegram"></i>
+        </a>
+    </div>
+
+    <!-- الأصوات -->
+    <audio id="clickSound" src="click.mp3"></audio>
+    <audio id="successSound" src="success.mp3"></audio>
+    <audio id="errorSound" src="error.mp3"></audio>
+
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+    <div class="loading-screen">
+        <div class="coffee-loader"></div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        <div class="visitor-count">
+            عدد الزوار: <span id="visitors">1,234</span>
+        </div>
+    </div>
+    
+    <audio id="bgMusic" loop>
+        <source src="https://example.com/cafe-ambience.mp3" type="audio/mp3">
+    </audio>
+    
+    <div class="coffee-steam"></div>
+    
+</body>
+</html>
