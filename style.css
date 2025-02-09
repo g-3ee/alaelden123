@@ -323,3 +323,30 @@ button::after {
     color: #fff;
     box-shadow: 0 0 20px rgba(212,175,55,0.5);
 }
+/* أضف هذا في ملف CSS */
+.wifi-container {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.wifi-icon {
+    font-size: 60px;
+    color: #d4af37;
+    filter: drop-shadow(0 0 10px #d4af37);
+    animation: wifi-shine 2s infinite;
+}
+
+@keyframes wifi-shine {
+    0% { 
+        filter: drop-shadow(0 0 5px #d4af37);
+        transform: scale(1);
+    }
+    50% { 
+        filter: drop-shadow(0 0 20px #d4af37);
+        transform: scale(1.1);
+    }
+    100% { 
+        filter: drop-shadow(0 0 5px #d4af37);
+        transform: scale(1);
+    }
+}
