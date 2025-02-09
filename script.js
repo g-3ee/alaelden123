@@ -1,4 +1,4 @@
-// تهيئة الصفحة
+
 document.addEventListener('DOMContentLoaded', function() {
     startLoading();
     initBackgroundMusic();
@@ -37,17 +37,17 @@ function updateVisitorCount() {
     $('#visitors').text(count + 1);
 }
 
-// في بداية الملف
+
 $(document).ready(function() {
-    // إخفاء المحتوى الرئيسي عند التحميل
+  
     $('.main-container').hide();
 });
 
-// تعديل دالة الدخول
+
 function enterSite() {
     $('.welcome-screen').fadeOut(1000);
     $('.main-container').fadeIn(1000, function() {
-        // تشغيل باقي المميزات بعد ظهور المحتوى
+    
         createStars();
         initBackgroundSlider();
         initMap();
@@ -55,7 +55,7 @@ function enterSite() {
     playSound('click');
 }
 
-// تهيئة عند تحميل الصفحة
+
 $(document).ready(function() {
     $('.main-container').hide();
     createStars();
@@ -64,14 +64,14 @@ $(document).ready(function() {
     setupAudio();
 });
 
-// دخول الموقع
+
 function enterSite() {
     $('.welcome-screen').fadeOut(1000);
     $('.main-container').fadeIn(1000);
     playSound('click');
 }
 
-// إعداد الأصوات
+
 function setupAudio() {
     const sounds = {
         click: new Audio('click.mp3'),
@@ -85,7 +85,7 @@ function playSound(type) {
     window.sounds[type].play();
 }
 
-// النجوم المتساقطة
+
 function createStars() {
     const starsContainer = $('.stars-container');
     for(let i = 0; i < 50; i++) {
@@ -100,7 +100,7 @@ function createStars() {
     }
 }
 
-// الخلفيات المتحركة
+
 function initBackgroundSlider() {
     const images = [
         'https://images.pexels.com/photos/2079249/pexels-photo-2079249.jpeg',
@@ -112,7 +112,7 @@ function initBackgroundSlider() {
     const slider = $('.background-slider');
     let currentSlide = 0;
 
-    // إنشاء الشرائح
+    
     images.forEach(img => {
         $('<div>')
             .addClass('slide')
@@ -123,14 +123,14 @@ function initBackgroundSlider() {
     const slides = $('.slide');
     slides.first().addClass('active');
 
-    // تغيير الشرائح تلقائياً
+    
     setInterval(() => {
         slides.eq(currentSlide).removeClass('active');
         currentSlide = (currentSlide + 1) % slides.length;
         slides.eq(currentSlide).addClass('active');
     }, 7000);
 
-    // تأثير Parallax
+   
     $(document).on('mousemove', (e) => {
         const { pageX, pageY } = e;
         const xPos = (pageX / window.innerWidth - 0.5) * 20;
@@ -139,7 +139,7 @@ function initBackgroundSlider() {
     });
 }
 
-// خريطة الموقع
+
 function initMap() {
     if ($('#map').length) {
         const map = L.map('map').setView([30.0444, 31.2357], 15);
@@ -151,7 +151,7 @@ function initMap() {
     }
 }
 
-// التحقق من الكود
+
 function validateCode(event) {
     event.preventDefault();
     const code = $(event.target).find('input').val();
@@ -180,7 +180,7 @@ function validateCode(event) {
     }
 }
 
-// المسح الضوئي
+
 function switchToScan() {
     playSound('click');
     $('#scanner-container').show();
